@@ -3,7 +3,8 @@
 Proyecto base de un blog web hecho con Django.
 
 ## Descripción
-Estructura inicial del proyecto (blog_project) con una aplicación llamada posts. Todavía no tiene modelos ni vistas.
+El sitio tiene dos páginas, Inicio y Acerca de, con templates HTML,
+navegación y estilos CSS. Todavía no tiene modelos propios.
 
 ## Instalación
 1. Clonar el repositorio:
