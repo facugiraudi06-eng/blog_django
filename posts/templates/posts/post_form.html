@@ -1,0 +1,18 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+    {% if form.instance.pk %}
+        <h1>Editar publicación</h1>
+    {% else %}
+        <h1>Crear publicación</h1>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <p><a href="{% url 'inicio' %}">Volver al inicio</a></p>
+{% endblock %}

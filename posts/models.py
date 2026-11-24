@@ -17,6 +17,8 @@ class Post(models.Model):
         choices=ESTADOS,
         default='borrador'
     )
+    
+    imagen = models.ImageField(upload_to='posts/', null=True, blank=True)
 
     def __str__(self):
         return self.titulo
