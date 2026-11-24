@@ -30,3 +30,20 @@ navegación y estilos CSS. Todavía no tiene modelos propios.
 
 ## Aplicaciones
 - posts: aplicación inicial para las publicaciones del blog.
+
+## Base de datos y administración
+
+Aplicar las migraciones:
+python manage.py migrate
+
+Crear un administrador:
+python manage.py createsuperuser
+
+Iniciar el servidor:
+python manage.py runserver
+
+Entrar a http://127.0.0.1:8000/admin/ con el usuario creado
+para agregar publicaciones.
+
+La página de inicio muestra únicamente los posts publicados,
+ordenados del más reciente al más antiguo.

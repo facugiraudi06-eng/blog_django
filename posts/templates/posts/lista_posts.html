@@ -1,0 +1,17 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+    <h1>Bienvenido a mi blog</h1>
+    <p>Estas son las últimas publicaciones.</p>
+
+    {% for post in posts %}
+        <article>
+            <h2>{{ post.titulo }}</h2>
+            <p>Por {{ post.autor }} | {{ post.fecha_creacion|date:"d/m/Y H:i" }}</p>
+            <p>{{ post.contenido }}</p>
+        </article>
+        <hr>
+    {% empty %}
+        <p>Todavía no hay publicaciones.</p>
+    {% endfor %}
+{% endblock %}
