@@ -85,3 +85,34 @@ python manage.py runserver
 7. Elegir Eliminar: Cancelar conserva el post y Sí, eliminar lo borra.
 
 Las publicaciones y las imágenes cargadas se conservan localmente.
+
+## Usuarios y perfiles
+
+La app accounts gestiona el registro, el inicio y el cierre de sesión.
+
+Para crear las tablas necesarias:
+python manage.py migrate
+
+Para iniciar el servidor:
+python manage.py runserver
+
+### Uso
+
+1. Elegir Registrarse para crear una cuenta.
+2. Iniciar sesión con el usuario y la contraseña elegidos.
+3. Entrar a Mi perfil para ver los datos personales.
+4. Usar Editar perfil para modificar biografía, enlace web y avatar.
+5. Usar Cerrar sesión para salir.
+
+El modelo Perfil está relacionado con User mediante OneToOneField.
+El perfil se crea desde la vista de registro, sin signals.
+Para usuarios anteriores, se crea con get_or_create al acceder al perfil.
+
+El avatar es opcional y se guarda en media/avatares/.
+Su carga utiliza Pillow, request.FILES y un formulario multipart.
+
+Crear, editar y eliminar posts requieren iniciar sesión mediante
+@login_required. Ver y editar el perfil también requieren autenticación.
+El listado y el detalle de publicaciones siguen siendo públicos.
+
+El menú muestra opciones diferentes según si el usuario inició sesión.

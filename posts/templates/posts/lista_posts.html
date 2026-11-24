@@ -4,8 +4,9 @@
     <h1>Bienvenido a mi blog</h1>
     <p>Estas son las últimas publicaciones.</p>
 
-    <p><a href="{% url 'crear_post' %}">Crear publicación</a></p>
-
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'crear_post' %}">Crear publicación</a></p>
+    {% endif %}
     {% for post in posts %}
         <article>
             <h2>

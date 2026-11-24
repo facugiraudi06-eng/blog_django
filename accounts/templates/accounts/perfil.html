@@ -1,0 +1,30 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+    <h1>Mi perfil</h1>
+
+    <p>Usuario: {{ user.username }}</p>
+
+    {% if user.email %}
+        <p>Email: {{ user.email }}</p>
+    {% endif %}
+
+    {% if perfil.avatar %}
+        <img src="{{ perfil.avatar.url }}"
+             alt="Avatar de {{ user.username }}"
+             style="max-width: 200px; height: auto;">
+    {% endif %}
+
+    <h2>Biografía</h2>
+    {{ perfil.biografia|linebreaks }}
+
+    {% if perfil.link_web %}
+        <p>
+            <a href="{{ perfil.link_web }}">Mi sitio web</a>
+        </p>
+    {% endif %}
+
+    <p>
+        <a href="{% url 'editar_perfil' %}">Editar perfil</a>
+    </p>
+{% endblock %}

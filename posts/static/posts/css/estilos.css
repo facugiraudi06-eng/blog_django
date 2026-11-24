@@ -8,17 +8,45 @@ body {
 nav {
     background-color: #2c3e50;
     padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 20px;
     font-weight: bold;
 }
 
 nav a:hover {
     color: #f1c40f;
+}
+
+nav span {
+    color: #f1c40f;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+nav form {
+    margin: 0;
+}
+
+nav button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 8px 14px;
+    font: inherit;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: white;
+    color: #2c3e50;
 }
 
 main {
@@ -31,4 +59,54 @@ h1 {
     color: #2c3e50;
     border-bottom: 3px solid #f1c40f;
     padding-bottom: 8px;
+}
+
+main a {
+    color: #245780;
+}
+
+main a:hover {
+    color: #163750;
+}
+
+main form p {
+    margin-bottom: 18px;
+}
+
+main input:not([type="checkbox"]):not([type="hidden"]),
+main textarea,
+main select {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font: inherit;
+}
+
+main button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 18px;
+    font: inherit;
+    cursor: pointer;
+}
+
+main button:hover {
+    background-color: #405b73;
+}
+
+.helptext {
+    display: block;
+    margin-top: 6px;
+    color: #555;
+    font-size: 14px;
+}
+
+.errorlist {
+    color: #a32020;
 }
